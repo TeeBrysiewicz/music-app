@@ -24,7 +24,9 @@ These are the evaluation critera:
 * Visit your app in `http://localhost:4200`
 
 
-**Hint:** If you don't have experience with EmberJS, feel free to look at the documentation before and during the task: [Ember guides](https://guides.emberjs.com/release/).
+**Hint:** If you don't have experience with Ember.js, feel free to look at the documentation before and during the task: [Ember guides](https://guides.emberjs.com/release/).
+
+**Hint:** Feel free to use the most recent version of Ember.js or any library/tool you need to complete this task. 
 
 ## Tasks
 
