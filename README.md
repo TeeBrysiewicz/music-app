@@ -11,9 +11,9 @@ These are the evaluation critera:
 
 ## Setup the project locally
 
-* Fork this repository in order to have a repository that we can pull to review. If you create a private repository you will have to add us as contributors.
+* In order to have a repository that we can pull to review, create a repository from the current template (click on the "Use this template" button). **Please do not fork current repository.** If you create a private repository you will have to add us as contributors.
 
-* Clone the forked repository in your local machine.
+* Clone the new repository in your local machine.
 
 * Go to the **music-app**. This folder is an Ember application with an initial setup for you.
 
