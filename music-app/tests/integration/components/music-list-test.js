@@ -12,7 +12,7 @@ module('Integration | Component | music-list', function(hooks) {
       EmberObject.create({ name: 'Cancion' })
     ]);
 
-    await render(hbs`<MusicList @albums={{albums}}/>`);
+    await render(hbs`<MusicList @model={{albums}}/>`);
 
     let listItems = findAll('[data-test=music-list-item]');
 

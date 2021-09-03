@@ -1,0 +1,9 @@
+<h1>Albums</h1>
+<hr>
+<ul>
+  {{#each @model as |one|}}
+    <li data-test="music-list-item">{{one.name}}</li>
+  {{/each}}
+</ul>
+
+{{yield}}

@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'music-app',
+    podModulePrefix: 'music-app/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

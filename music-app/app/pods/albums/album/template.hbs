@@ -1,0 +1,63 @@
+<div class="flex w-full p-2">
+  <div class="w-1/2">
+    <div class="">
+      <h1 class="flex-1 h-12 text-lg inline-block">Album: {{this.model.name}}</h1>
+      <button
+        {{on "click" (fn (mut this.isAddingSong) true)}}
+        class="flex-1 bg-white border-2 border-blue-300 text-blue-300 rounded-lg px-4 py-2 inline ml-8"
+      >
+        <i class="fas fa-plus"></i>
+      </button>
+      <hr>
+    </div>
+
+    <ul class="ml-2 mt-6">
+      {{#each this.model.songs as |song|}}
+        <li>
+          <button type="button" {{on "click" (fn this.selectSong song)}}>
+            {{song.name}}
+          </button>
+        </li>
+      {{/each}}
+    </ul>
+
+    {{#if this.isAddingSong}}
+      <div class="mt-2">
+        <form {{on "submit" this.saveSong}}>
+          <label class="block">Song Name:</label>
+          <Input
+            type="text"
+            @value={{this.newSongName}}
+            placeholder={{this.newSongName}}
+            class="w-full rounded p-2 m-2 border-2 border-blue-300"
+          />
+
+          <label class="block">Song Lyrics:</label>
+          <Textarea
+            @value={{this.newSongLyrics}}
+            placeholder={{this.newSongLyrics}}
+            class="w-full rounded p-2 m-2 border-2 border-blue-300"
+          />
+
+          <div class="block flex justify-center">
+            <button
+              {{on "click" (fn (mut this.isAddingSong) false)}}
+              type="button"
+              class="inline bg-grey-200 rounded-lg m-2 px-4 py-2">
+                Cancel
+            </button>
+            <button
+              type="submit"
+              class="inline bg-blue-300 rounded-lg m-2 px-4 py-2 text-white">
+                Add
+            </button>
+          </div>
+        </form>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="w-1/2">
+    <Song @model={{this.selectedSong}} />
+  </div>
+</div>
