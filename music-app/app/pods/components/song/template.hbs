@@ -1,8 +1,14 @@
 <div class="px-4 w-full">
   <div>
-    <h1 class="h-12 text-lg inline-block">Song: {{@model.name}}</h1>
+    <h1
+      class="h-12 text-lg inline-block"
+      data-test="song-{{@model.id}}-name"
+    >
+      Song: {{@model.name}}
+    </h1>
     <button
       {{on "click" (fn (mut this.isEditing) true)}}
+      data-test="edit-song-button"
       class="bg-white border-2 border-blue-300 text-blue-300 rounded-lg px-4 py-2 inline ml-16"
     >
       <i class="fas fa-pen"></i>
@@ -16,6 +22,7 @@
         <Input
           type="text"
           @value={{@model.name}}
+          data-test="song-name-input"
           class="w-full rounded p-2 m-2 border-2 border-blue-300"
         />
         <label class="block">Lyrics:</label>
@@ -26,20 +33,23 @@
         <button
           {{on "click" (fn (mut this.isEditing) false)}}
           type="button"
-          class="inline bg-grey-200 rounded-lg m-2 px-4 py-2">
-            Cancel
+          class="inline bg-grey-200 rounded-lg m-2 px-4 py-2"
+        >
+          Cancel
         </button>
         <button
           type="submit"
-          class="inline bg-blue-300 rounded-lg m-2 px-4 py-2 text-white">
-            Update
+          data-test="save-edit-song-button"
+          class="inline bg-blue-300 rounded-lg m-2 px-4 py-2 text-white"
+        >
+          Update
         </button>
       </form>
     </div>
   {{else}}
     <div>
       <h2 class="ml-2 mt-2">Lyrics:</h2>
-      <p class="ml-2 mt-2">{{@model.lyrics}}</p>
+      <p class="ml-2 mt-2" data-test="song-{{@model.id}}-lyrics">{{@model.lyrics}}</p>
     </div>
   {{/if}}
 </div>

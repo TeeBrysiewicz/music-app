@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class SongComponent extends Component {
-  @tracked isEditing = true;
+  @tracked isEditing = false;
 
   @action
   async updateSong(e) {

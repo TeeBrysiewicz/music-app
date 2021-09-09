@@ -1,9 +1,20 @@
-<h1>Albums</h1>
-<hr>
-<ul>
-  {{#each @model as |one|}}
-    <li data-test="music-list-item">{{one.name}}</li>
-  {{/each}}
-</ul>
+<div class="w-full">
+  <div>
+    <h1 class="h-16 text-lg">Albums</h1>
+    <hr>
+  </div>
 
-{{yield}}
+  <ul class="ml-2 mt-2">
+    {{#each this.model as |album|}}
+      <li data-test="music-list-item">
+        <LinkTo
+          @route="albums.album"
+          @model={{album.id}}
+          data-test="album-{{album.id}}"
+        >
+          {{album.name}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+</div>

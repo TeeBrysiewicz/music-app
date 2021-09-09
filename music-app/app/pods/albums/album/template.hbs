@@ -1,9 +1,10 @@
 <div class="flex w-full p-2">
   <div class="w-1/2">
-    <div class="">
+    <div>
       <h1 class="flex-1 h-12 text-lg inline-block">Album: {{this.model.name}}</h1>
       <button
         {{on "click" (fn (mut this.isAddingSong) true)}}
+        data-test="add-song-button"
         class="flex-1 bg-white border-2 border-blue-300 text-blue-300 rounded-lg px-4 py-2 inline ml-8"
       >
         <i class="fas fa-plus"></i>
@@ -14,7 +15,11 @@
     <ul class="ml-2 mt-6">
       {{#each this.model.songs as |song|}}
         <li>
-          <button type="button" {{on "click" (fn this.selectSong song)}}>
+          <button
+            type="button"
+            data-test="song-{{song.id}}-button"
+            {{on "click" (fn this.selectSong song)}}
+          >
             {{song.name}}
           </button>
         </li>
@@ -29,6 +34,7 @@
             type="text"
             @value={{this.newSongName}}
             placeholder={{this.newSongName}}
+            data-test="new-song-name-input"
             class="w-full rounded p-2 m-2 border-2 border-blue-300"
           />
 
@@ -43,13 +49,16 @@
             <button
               {{on "click" (fn (mut this.isAddingSong) false)}}
               type="button"
-              class="inline bg-grey-200 rounded-lg m-2 px-4 py-2">
-                Cancel
+              class="inline bg-grey-200 rounded-lg m-2 px-4 py-2"
+            >
+              Cancel
             </button>
             <button
               type="submit"
-              class="inline bg-blue-300 rounded-lg m-2 px-4 py-2 text-white">
-                Add
+              data-test="save-new-song-button"
+              class="inline bg-blue-300 rounded-lg m-2 px-4 py-2 text-white"
+            >
+              Add
             </button>
           </div>
         </form>
