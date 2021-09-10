@@ -48,7 +48,19 @@
     </div>
   {{else}}
     <div>
-      <h2 class="ml-2 mt-2">Lyrics:</h2>
+      <h2 class="font-medium">Artists:</h2>
+      {{#if @model.artists}}
+        <ul class="ml-2">
+          {{#each @model.artists as |artist|}}
+            <li>{{artist.name}}</li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <h3 class="ml-2">No artists</h3>
+      {{/if}}
+      <h2 class="font-medium">Genre:</h2>
+      <h3 class="ml-2">{{if @model.genre @model.genre.name "No genre"}}</h3>
+      <h2 class="mt-2 font-medium">Lyrics:</h2>
       <p class="ml-2 mt-2" data-test="song-{{@model.id}}-lyrics">{{@model.lyrics}}</p>
     </div>
   {{/if}}

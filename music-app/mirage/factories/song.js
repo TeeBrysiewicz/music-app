@@ -11,6 +11,7 @@ export default Factory.extend({
   },
 
   afterCreate(song, server) {
-    song.genre = server.create('genre', { name: 'House' });
+    server.create('genre', { name: faker.animal.dog(), song });
+    server.createList('artist', Math.floor(Math.random() * 3) + 1, { song });
   }
 });

@@ -12,7 +12,8 @@
       <hr>
     </div>
 
-    <ul class="ml-2 mt-6">
+    <h2 class="ml-2 mt-6">Album Songs:</h2>
+    <ul class="ml-2">
       {{#each this.model.songs as |song|}}
         <li>
           <button
@@ -67,6 +68,11 @@
   </div>
 
   <div class="w-1/2">
-    <Song @model={{this.selectedSong}} />
+    {{#if this.selectedSong}}
+      <Song @model={{this.selectedSong}} />
+    {{else}}
+      <h2 class="h-12 w-full px-4 my-1">No song selected.</h2>
+      <hr>
+    {{/if}}
   </div>
 </div>

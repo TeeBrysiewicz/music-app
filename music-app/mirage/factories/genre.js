@@ -3,6 +3,6 @@ import faker from 'faker';
 
 export default Factory.extend({
   name() {
-    return faker.animal.cat();
+    return faker.animal.dog();
   }
 });
