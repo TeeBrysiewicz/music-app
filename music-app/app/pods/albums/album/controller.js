@@ -1,11 +1,10 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import fetch from 'fetch';
 
 export default class AlbumController extends Controller {
   @tracked selectedSong;
-  @tracked isAddingSong = true;
+  @tracked isAddingSong = false;
   @tracked newSongName;
   @tracked newSongLyrics;
 
