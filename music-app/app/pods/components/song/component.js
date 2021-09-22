@@ -10,4 +10,11 @@ export default class SongComponent extends Component {
     e.preventDefault();
     await this.model.save();
   }
+
+  @action
+  cancel(e) {
+    e.preventDefault();
+    this.model.rollbackAttributes();
+    this.isEditing = !this.isEditing;
+  }
 }

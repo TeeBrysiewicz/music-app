@@ -5,7 +5,7 @@
   </div>
 
   <ul class="ml-2 mt-2">
-    {{#each this.model as |album|}}
+    {{#each @model as |album|}}
       <li data-test="music-list-item">
         <LinkTo
           @route="albums.album"
